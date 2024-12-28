@@ -5,6 +5,8 @@ import Footer from "./Home/Footer";
 import Create from "./Home/Create/Create";
 import { Route, Routes } from "react-router-dom";
 import Post from "./Home/Post/Post";
+import Login from "./Login/Login";
+import Register from "./Register/Register";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
             <Route path="/" element={<Hero />} />
             <Route path="/create" element={<Create />} />
             <Route path='/post' element={<Post/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/register'element={<Register/>}/>
           </Routes>
           <Footer />
         </div>
