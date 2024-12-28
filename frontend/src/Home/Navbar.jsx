@@ -1,22 +1,29 @@
 import React, { useState } from "react";
+import Logo from "../assets/Logo (1).png"
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [user, setUser] = useState(false);
+
+  const navigate=useNavigate()
+  const [user, setUser] = useState(true);
+
+  const handlechange=()=>{
+ navigate('/create')
+  }
 
   return (
-    <div className="flex h-16 items-center bg-red-700 flex-row justify-between">
-      <h1 className="pl-4">hello</h1>
-
+    <div className="flex h-16 items-center flex-row justify-between">
+      <img className="w-36" src={Logo} alt="" />
       <div className="flex flex-row gap-6">
         {user ? (
           <>
-            <h1 className="text-xl">Create Post</h1>
-            <h1 className="pr-4 text-xl font-normal">LogOut</h1>
+            <h1 onClick={handlechange} className="cursor-pointer text-xl">Create Post</h1>
+            <h1 className="pr-4 text-xl cursor-pointer font-normal">LogOut</h1>
           </>
         ) : (
           <>
-            <h1 className="text-xl">Login</h1>
-            <h1 className="pr-4 text-xl font-normal">Register</h1>
+            <h1 className="cursor-pointer text-xl">Login</h1>
+            <h1 className="pr-4 text-xl cursor-pointer font-normal">Register</h1>
           </>
         )}
       </div>
