@@ -1,23 +1,22 @@
+import { Blogdata } from "@/assets/Assets";
+
 const { createContext, useEffect } = require("react");
 
+export const BlogContext = createContext();
 
+export const BlogProvider = ({ children }) => {
+  const [data, setData] = useState([]);
 
-export  const BlogContext=createContext
+  const fetchData = () => {
+    setData(Blogdata);
+  };
 
-export const Blogprovider=({Children})=>{
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const value = { data };
 
-    const [data,setData]=useStae()
-
-    useEffect(
-      {
-          setData(Blogdata)
-      },[]
-    )
-      const value={data}
-
-    return(
-      <BlogContext.provider value={value}>
-        {Children}
-      </BlogContext.provider>
-    )
-}
+  return <BlogContext.Provider value={value}>
+    {children}
+    </BlogContext.Provider>;
+};

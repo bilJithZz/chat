@@ -9,7 +9,7 @@ const Related = () => {
     <div className=" w-full">
       <div className="grid w-full grid-cols-3 gap-5">
        
-       {blog.map((data,index)=>{
+       {blog.slice(0,6).map((data,index)=>{
         return(
           <div key={index} className="flex flex-col">
           <img
