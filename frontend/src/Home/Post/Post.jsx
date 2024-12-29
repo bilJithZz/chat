@@ -1,7 +1,11 @@
 import React from 'react'
 import Related from '../Hero/Related'
+import { useParams } from 'react-router-dom'
 
 const Post = () => {
+
+    const {id}=useParams()
+
   return (
     <div className='flex flex-col gap-9'>
     <div className='w-9/12 flex flex-col gap-5 m-auto'>
@@ -26,6 +30,7 @@ const Post = () => {
             </h1>
             </div>    
     </div>
+   <p className='text-2xl'> Related Post</p>
      <Related/>
      </div>
   )

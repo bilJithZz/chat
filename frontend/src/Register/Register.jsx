@@ -1,6 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
+
+  const navigate=useNavigate()
+
   return (
     <div className="min-h-screen flex items-center justify-center">
     <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
@@ -46,7 +50,7 @@ const Register = () => {
       <div className="mt-4 text-center">
         <p className="text-sm text-gray-600">
           Don’t have an account?{" "}
-          <a href="/register" className="text-blue-500 hover:underline">
+          <a href="/register" onClick={()=>{navigate('/login')}} className="text-blue-500 hover:underline">
             Sign up
           </a>
         </p>

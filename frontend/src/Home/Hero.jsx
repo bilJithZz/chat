@@ -14,7 +14,6 @@ const Hero = () => {
         </div>
         <h1 className="mt-5 text-3xl mb-4">Latest Article</h1>
         <Related />
-        <Related />
       </div>
     </div>
   );
