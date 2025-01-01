@@ -10,7 +10,7 @@ const SlidHero = () => {
       {Blogdata.slice(3,4 ).map((data, index) => {
         return (
           <div>
-            <img
+            <img className="h-[376px] w-screen object-cover"
               src={data.image_url}
               alt=""
             />
@@ -19,7 +19,7 @@ const SlidHero = () => {
               {data.title}
             </h1>
             <h1>
-           { data.summary ? data.summary.substring(0, 500) + "..." : "No summary available."}
+           { data.summary ? data.summary.substring(0, 400) + "..." : "No summary available."}
             </h1>
           </div>
         );

@@ -12,14 +12,14 @@ const Related = () => {
        {blog.slice(0,6).map((data,index)=>{
         return(
           <div key={index} className="flex flex-col">
-          <img
+          <img className="h-52 w-80 object-cover"
             src={data.image_url}
             alt=""
           />
           <h1>October 2023</h1>
           <h1>{data.title}</h1>
           <h1>
-          { data.summary}
+          { data.summary.substring(0,100)}
           </h1>
         </div>
         )
