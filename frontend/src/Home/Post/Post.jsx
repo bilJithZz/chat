@@ -22,7 +22,7 @@ const Post = () => {
         <div className="flex justify-center text-center text-xl text-gray-400 flex-wrap">
             {data?.summary}
         </div>
-        <img src={data?.image_url || "https://via.placeholder.com/500"} alt="" />
+        <img className='h-[490px] w-full object-cover ' src={data?.image_url || "https://via.placeholder.com/500"} alt="" />
         <div>
             <h1>
                 {data?.content}
@@ -30,7 +30,7 @@ const Post = () => {
         </div>    
       </div>
       <p className='text-2xl'>Related Post</p>
-      <Related/>
+      <Related currentPostId={Number(id)}/>
     </div>
   )
 }

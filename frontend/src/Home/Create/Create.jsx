@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+
+  const navigate=useNavigate()
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [file, setFile] = useState(null);
@@ -65,7 +68,7 @@ const Create = () => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
         ></textarea>
-        <button className="bg-yellow-400 cursor-pointer p-4">Submit</button>
+        <button onClick={()=>(navigate("/"))} className="bg-yellow-400 cursor-pointer p-4">Submit</button>
       </form>
     </div>
   );
